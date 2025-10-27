@@ -178,20 +178,6 @@ build_frontend() {
     fi
 }
 
-# Function to install frontend dependencies
-install_frontend_deps() {
-    require_command npm
-    log_info "Installing frontend dependencies..."
-    cd "$FRONTEND_DIR" || { log_error "Frontend directory not found"; exit 1; }
-
-    if npm install; then
-        log_success "Frontend dependencies installed successfully"
-    else
-        log_error "Frontend dependency installation failed"
-        exit 1
-    fi
-}
-
 # Function to lint frontend
 lint_frontend() {
     require_command npm
